@@ -1,0 +1,7 @@
+{
+  "session_id": 41,
+  "file": "claims.json",
+  "index": 0,
+  "total": 1,
+  "content": "[{\"id\": \"C1\", \"text\": \"Capacity holds to minus 15 C.\", \"confidence\": \"high\", \"how_found\": \"field study\", \"sources\": [{\"url\": \"https://www.example.org/study/?utm_source=x\", \"title\": \"Study\", \"accessed\": \"2026-11-12\"}]}, {\"id\": \"C2\", \"text\": \"Lower running cost than oil.\", \"confidence\": \"medium\", \"how_found\": \"report\", \"sources\": [{\"url\": \"https://example.net/costs\", \"title\": \"Costs\", \"accessed\": \"2026-11-12\"}]}]"
+}

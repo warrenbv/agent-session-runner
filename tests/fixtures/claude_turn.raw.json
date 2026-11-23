@@ -1,0 +1,42 @@
+{
+  "source": "Written by hand from the documented Python Agent SDK shapes (claude_agent_sdk/types.py 0.2.179), as providers.claude.to_raw renders them.",
+  "messages": [
+    {"type": "QuerySent"},
+    {"type": "SystemMessage", "subtype": "init", "data": {"session_id": "6f1d2c1e-0000-4000-8000-000000000001", "tools": ["Read", "Bash", "Task"]}},
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "content": [
+      {"type": "ThinkingBlock", "thinking": "Look at the script first.", "signature": "sig"},
+      {"type": "TextBlock", "text": "I'll read the backup script first."},
+      {"type": "ToolUseBlock", "id": "toolu_01", "name": "Read", "input": {"file_path": "scripts/backup.sh"}}
+    ]},
+    {"type": "UserMessage", "parent_tool_use_id": null, "content": [
+      {"type": "ToolResultBlock", "tool_use_id": "toolu_01", "content": "#!/bin/sh\nrsync -a /srv/data /backup\n", "is_error": false}
+    ]},
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "content": [
+      {"type": "ToolUseBlock", "id": "toolu_02", "name": "Task", "input": {"description": "Write a test for the backup script", "prompt": "Add a test that runs backup.sh against a temp dir.", "subagent_type": "test-writer"}}
+    ]},
+    {"type": "TaskStartedMessage", "subtype": "task_started", "data": {}, "task_id": "task_1", "description": "Write a test for the backup script", "uuid": "u-1", "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "tool_use_id": "toolu_02", "task_type": "local_agent"},
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": "toolu_02", "content": [
+      {"type": "ToolUseBlock", "id": "toolu_03", "name": "Bash", "input": {"command": "pytest -q tests/test_backup.py", "description": "Run the new test"}}
+    ]},
+    {"type": "UserMessage", "parent_tool_use_id": "toolu_02", "content": [
+      {"type": "ToolResultBlock", "tool_use_id": "toolu_03", "content": [{"type": "text", "text": "3 passed in 0.41s"}], "is_error": false}
+    ]},
+    {"type": "TaskProgressMessage", "subtype": "task_progress", "data": {}, "task_id": "task_1", "description": "Write a test for the backup script", "usage": {"total_tokens": 5120, "tool_uses": 2, "duration_ms": 8100}, "uuid": "u-2", "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "tool_use_id": "toolu_02", "last_tool_name": "Bash"},
+    {"type": "TaskNotificationMessage", "subtype": "task_notification", "data": {}, "task_id": "task_1", "status": "completed", "output_file": "/tmp/task_1.out", "summary": "Added tests/test_backup.py; 3 passed.", "uuid": "u-3", "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "tool_use_id": "toolu_02"},
+    {"type": "UserMessage", "parent_tool_use_id": null, "content": [
+      {"type": "ToolResultBlock", "tool_use_id": "toolu_02", "content": "Added tests/test_backup.py; 3 passed.", "is_error": false}
+    ]},
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "content": [
+      {"type": "TextBlock", "text": "The backup now excludes the cache directory, and a test covers it."}
+    ]},
+    {"type": "RateLimitEvent", "uuid": "u-4", "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "rate_limit_info": {"status": "allowed_warning", "resets_at": 1794268800, "rate_limit_type": "five_hour", "utilization": 0.81, "raw": {}}},
+    {"type": "StreamEvent", "uuid": "u-5", "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "event": {"type": "content_block_delta"}},
+    {"type": "ResultMessage", "subtype": "success", "duration_ms": 48211, "duration_api_ms": 30120, "is_error": false, "num_turns": 7, "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "stop_reason": "end_turn", "total_cost_usd": 0.4215, "usage": {"input_tokens": 1200, "output_tokens": 2400, "cache_read_input_tokens": 52000}, "result": "{\"summary\": \"...\"}", "structured_output": {"summary": "Exclude the cache directory from the backup", "files_changed": ["scripts/backup.sh", "tests/test_backup.py"], "tests_run": ["pytest -q tests/test_backup.py"], "branch": "agent/fix-backup", "open_questions": []}, "model_usage": {"claude-opus-5-5": {"inputTokens": 1200, "outputTokens": 2400, "costUSD": 0.4215}}, "permission_denials": [], "terminal_reason": "completed"},
+    {"type": "ResultMessage", "subtype": "error_max_turns", "duration_ms": 900, "duration_api_ms": 800, "is_error": true, "num_turns": 20, "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "total_cost_usd": 0.98, "terminal_reason": "max_turns"},
+    {"type": "ResultMessage", "subtype": "error_during_execution", "duration_ms": 120, "duration_api_ms": 100, "is_error": true, "num_turns": 2, "session_id": "6f1d2c1e-0000-4000-8000-000000000001", "terminal_reason": "aborted_streaming"}
+  ],
+  "approvals": [
+    {"tool_name": "Bash", "input": {"command": "rm -rf build/", "description": "Clean the build"}, "context": {"tool_use_id": "toolu_04", "agent_id": null, "title": "Claude wants to run rm -rf build/"}},
+    {"tool_name": "Write", "input": {"file_path": "tests/test_backup.py", "content": "def test_backup():\n    pass\n"}, "context": {"tool_use_id": "toolu_05", "agent_id": "test-writer", "title": null}}
+  ]
+}

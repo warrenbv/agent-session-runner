@@ -1,0 +1,685 @@
+{
+ "source": "Recorded from a live session on the author's own machine by a recording script that is not part of this edition, then scrubbed (claude, exit codes).",
+ "commands": [
+  "sh -c 'exit 3'",
+  "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+  "sh -c 'echo fine'",
+  "test -e /nonexistent-runner-probe-path",
+  "grep -q runner-probe-no-such-text /etc/hostname"
+ ],
+ "messages": [
+  {
+   "type": "QuerySent"
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "init",
+   "data": {
+    "type": "system",
+    "subtype": "init",
+    "cwd": "/home/agent/.cache/runner-probes/probe-5778ex34/wt",
+    "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+    "tools": [
+     "Task",
+     "AskUserQuestion",
+     "Bash",
+     "CronCreate",
+     "CronDelete",
+     "CronList",
+     "Edit",
+     "EnterPlanMode",
+     "EnterWorktree",
+     "ExitPlanMode",
+     "ExitWorktree",
+     "ListAgents",
+     "Monitor",
+     "NotebookEdit",
+     "Read",
+     "RemoteTrigger",
+     "ReportFindings",
+     "ScheduleWakeup",
+     "SendMessage",
+     "Skill",
+     "TaskStop",
+     "ToolSearch",
+     "WebFetch",
+     "WebSearch",
+     "Workflow",
+     "Write"
+    ],
+    "mcp_servers": [],
+    "model": "claude-opus-5-5",
+    "permissionMode": "default",
+    "slash_commands": [
+     "deep-research",
+     "dataviz",
+     "update-config",
+     "verify",
+     "debug",
+     "code-review",
+     "simplify",
+     "batch",
+     "fewer-permission-prompts",
+     "doctor",
+     "loop",
+     "schedule",
+     "claude-api",
+     "workflow-authoring",
+     "run",
+     "run-skill-generator",
+     "plugin-authoring",
+     "agents",
+     "auto-mode-setup",
+     "autocompact",
+     "clear",
+     "color",
+     "compact",
+     "config",
+     "output-style",
+     "context",
+     "effort",
+     "fast",
+     "focus",
+     "heapdump",
+     "init",
+     "mcp",
+     "model",
+     "__remote-workflow",
+     "workflow-launch-exec",
+     "reload-plugins",
+     "reload-skills",
+     "rename",
+     "security-review",
+     "usage",
+     "insights",
+     "recap",
+     "goal",
+     "list-agents",
+     "team-onboarding"
+    ],
+    "terminal_slash_commands": [
+     "doctor",
+     "color",
+     "focus",
+     "reload-plugins"
+    ],
+    "apiKeySource": "[redacted]",
+    "claude_code_version": "2.1.321",
+    "output_style": "default",
+    "agents": [
+     "claude",
+     "Explore",
+     "general-purpose",
+     "Plan",
+     "statusline-setup"
+    ],
+    "skills": [
+     "deep-research",
+     "dataviz",
+     "update-config",
+     "verify",
+     "debug",
+     "code-review",
+     "simplify",
+     "batch",
+     "fewer-permission-prompts",
+     "doctor",
+     "loop",
+     "schedule",
+     "claude-api",
+     "workflow-authoring",
+     "run",
+     "run-skill-generator",
+     "plugin-authoring"
+    ],
+    "plugins": [
+     {
+      "name": "cc-plugin-sec-default",
+      "path": "builtin",
+      "source": "cc-plugin-sec-default@builtin"
+     },
+     {
+      "name": "cc-plugin-agents-md",
+      "path": "builtin",
+      "source": "cc-plugin-agents-md@builtin"
+     },
+     {
+      "name": "cc-plugin-privacy",
+      "path": "builtin",
+      "source": "cc-plugin-privacy@builtin"
+     },
+     {
+      "name": "cc-plugin-plugin-authoring",
+      "path": "builtin",
+      "source": "cc-plugin-plugin-authoring@builtin"
+     }
+    ],
+    "capabilities": [
+     "interrupt_receipt_v1",
+     "interrupt_cancel_queued_v1",
+     "interrupt_send_now_v1",
+     "interrupt_requeue_taken_v1",
+     "msg_lifecycle_v1",
+     "request_marker_lists_v1",
+     "ask_user_question_unanswered_v1",
+     "lifecycle_wakeup_source_v1",
+     "sdk_mcp_tools_list_changed",
+     "sdk_mcp_manifests",
+     "mcp_read_resource_v1",
+     "mcp_tool_ui_meta_v1",
+     "ui_surface_v1",
+     "mcp_call_result_not_for_model_v1",
+     "mcp_call_check_permissions_v1"
+    ],
+    "analytics_disabled": true,
+    "product_feedback_disabled": false,
+    "uuid": "8188a280-68d6-4a64-9253-63e03cbc4f96",
+    "memory_paths": {
+     "auto": "[home path]"
+    },
+    "original_cwd": "/home/agent/.cache/runner-probes/probe-5778ex34/wt",
+    "additional_directories": [],
+    "messaging_socket_path": "[home path]",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "per_turn_effort_active": true,
+    "ultrathink_available": false,
+    "ultrathink_typed_raises": false,
+    "view_mode": "default"
+   }
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01RqmVj1N1jrx9D1XzhvA3F8",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'exit 3'",
+      "description": "Run shell exiting with status 3"
+     }
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 6045,
+    "cache_read_input_tokens": 12592,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 6045
+    },
+    "output_tokens": 17,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd8X8AmZpLQZc7Fi8ah",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "17068115-b549-493f-a3f7-c74bf5a894c8"
+  },
+  {
+   "type": "RateLimitEvent",
+   "rate_limit_info": {
+    "type": "RateLimitInfo",
+    "status": "allowed",
+    "resets_at": 1794567600,
+    "rate_limit_type": "seven_day",
+    "utilization": null,
+    "overage_status": "rejected",
+    "overage_resets_at": null,
+    "overage_disabled_reason": "redacted",
+    "raw": {
+     "status": "allowed",
+     "resetsAt": 1794567600,
+     "rateLimitType": "seven_day",
+     "overageStatus": "rejected",
+     "overageDisabledReason": "redacted",
+     "isUsingOverage": false,
+     "unifiedWindows": {
+      "seven_day": {
+       "utilization": 0.5,
+       "resetsAt": 1794567600,
+       "status": "allowed"
+      }
+     }
+    }
+   },
+   "uuid": "5320d9a4-543e-48db-9465-6892f09e692a",
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01RqmVj1N1jrx9D1XzhvA3F8",
+     "content": "Exit code 3",
+     "is_error": true
+    }
+   ],
+   "uuid": "ec7852ba-5e79-40ac-9079-7e2a24097bd9",
+   "parent_tool_use_id": null,
+   "tool_use_result": "Error: Exit code 3",
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01BQkiQvzfi5bfXsRULAhkeD",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+      "description": "Print to stdout and stderr, exit 4"
+     }
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 105,
+    "cache_read_input_tokens": 18637,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 105
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd8fAMTxXPr4CHaDR3d",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "c1eceebe-8520-4606-8e9e-fa6fce2a4482"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01BQkiQvzfi5bfXsRULAhkeD",
+     "content": "Exit code 4\nto-stdout\nto-stderr",
+     "is_error": true
+    }
+   ],
+   "uuid": "f3bed976-a304-48a6-bca3-4ddf09cb10c4",
+   "parent_tool_use_id": null,
+   "tool_use_result": "Error: Exit code 4\nto-stdout\nto-stderr",
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01Kn8rAteGgE3mmnHtYQzfmv",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'echo fine'",
+      "description": "Print fine"
+     }
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 142,
+    "cache_read_input_tokens": 18742,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 142
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd8oURtEpxMQcNW9DCF",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "5a0f3bf0-8e1e-4b23-bc57-83a6a25c849e"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01Kn8rAteGgE3mmnHtYQzfmv",
+     "content": "fine",
+     "is_error": false
+    }
+   ],
+   "uuid": "7d579dcc-e69b-4642-b954-ff896266bb92",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "fine",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01XgZvdTce14Kf8rUhKKXrjk",
+     "name": "Bash",
+     "input": {
+      "command": "test -e /nonexistent-runner-probe-path",
+      "description": "Check whether a nonexistent path exists"
+     }
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 88,
+    "cache_read_input_tokens": 18884,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 88
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd8w4aZfadfvhqPjNst",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "d0ce2efd-2970-410f-859e-f0d6d9bfddb8"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01XgZvdTce14Kf8rUhKKXrjk",
+     "content": "(Bash completed with no output)",
+     "is_error": false
+    }
+   ],
+   "uuid": "d81e9169-3e83-4bff-8ea5-d6487f504702",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "returnCodeInterpretation": "Condition is false",
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "thinking_tokens",
+   "data": {
+    "type": "system",
+    "subtype": "thinking_tokens",
+    "estimated_tokens": 50,
+    "estimated_tokens_delta": 50,
+    "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+    "uuid": "72858ed7-a359-4c3b-8461-1ed560e14e6b"
+   }
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "thinking_tokens",
+   "data": {
+    "type": "system",
+    "subtype": "thinking_tokens",
+    "estimated_tokens": 217,
+    "estimated_tokens_delta": 167,
+    "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+    "uuid": "070874cd-ac5d-41f1-bed1-579acfb68431"
+   }
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ThinkingBlock",
+     "thinking": "",
+     "signature": "[redacted]"
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 112,
+    "cache_read_input_tokens": 18972,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 112
+    },
+    "output_tokens": 8,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd95f1cHEXnvomGJu4q",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "3c375bb0-836c-4e4d-adb2-317c35d4c400"
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01DqtZUAZHo7GBwNfTPVvMY9",
+     "name": "Bash",
+     "input": {
+      "command": "grep -q runner-probe-no-such-text /etc/hostname",
+      "description": "Search hostname file for absent text"
+     }
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 112,
+    "cache_read_input_tokens": 18972,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 112
+    },
+    "output_tokens": 8,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd95f1cHEXnvomGJu4q",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "c4d9e894-19d1-404b-b1c2-db984b0cade1"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01DqtZUAZHo7GBwNfTPVvMY9",
+     "content": "(Bash completed with no output)",
+     "is_error": false
+    }
+   ],
+   "uuid": "9c7bee78-5384-4770-a30c-c9037373a4f2",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "returnCodeInterpretation": "No matches found",
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "thinking_tokens",
+   "data": {
+    "type": "system",
+    "subtype": "thinking_tokens",
+    "estimated_tokens": 50,
+    "estimated_tokens_delta": 50,
+    "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+    "uuid": "6ec532cb-fd4a-4a41-9dd4-94364acba420"
+   }
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "thinking_tokens",
+   "data": {
+    "type": "system",
+    "subtype": "thinking_tokens",
+    "estimated_tokens": 303,
+    "estimated_tokens_delta": 253,
+    "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+    "uuid": "517ca69d-26c8-4231-a55f-0b97e8910c28"
+   }
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ThinkingBlock",
+     "thinking": "",
+     "signature": "[redacted]"
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 228,
+    "cache_read_input_tokens": 19084,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 228
+    },
+    "output_tokens": 3,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd9HDn9HD294Q5F76kM",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "671e135e-d6fa-43d1-b81a-ec6803abf75c"
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "TextBlock",
+     "text": "DONE\n\nNote: steps 1 and 2 exited with codes 3 and 4. Steps 4 and 5 should have exited with status 1, but the tool showed no error and no output for either one."
+    }
+   ],
+   "model": "claude-opus-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 228,
+    "cache_read_input_tokens": 19084,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 228
+    },
+    "output_tokens": 3,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011Cgwd9HDn9HD294Q5F76kM",
+   "stop_reason": null,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "uuid": "acf1261b-dfa9-4ce8-820e-c0338ad62a6d"
+  },
+  {
+   "type": "ResultMessage",
+   "subtype": "success",
+   "duration_ms": 14062,
+   "duration_api_ms": 13633,
+   "is_error": false,
+   "num_turns": 6,
+   "session_id": "447ba20a-25bd-4488-9410-af60e88e8366",
+   "stop_reason": "end_turn",
+   "total_cost_usd": 0.0905102,
+   "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 6720,
+    "cache_read_input_tokens": 106911,
+    "output_tokens": 766,
+    "output_tokens_details": {
+     "thinking_tokens": 223
+    },
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 6720,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "result": "DONE\n\nNote: steps 1 and 2 exited with codes 3 and 4. Steps 4 and 5 should have exited with status 1, but the tool showed no error and no output for either one.",
+   "structured_output": null,
+   "model_usage": {
+    "claude-opus-5-5": {
+     "inputTokens": 12,
+     "outputTokens": 766,
+     "cacheReadInputTokens": 106911,
+     "cacheCreationInputTokens": 6720,
+     "webSearchRequests": 0,
+     "costUSD": 0.0905102,
+     "contextWindow": 1000000,
+     "maxOutputTokens": 128000,
+     "thinkingTokens": 223,
+     "cacheCreationEphemeral5mInputTokens": 0,
+     "cacheCreationEphemeral1hInputTokens": 6720,
+     "canonicalModel": "claude-opus-5-5",
+     "provider": "firstParty",
+     "costBasis": "list"
+    }
+   },
+   "permission_denials": [],
+   "deferred_tool_use": null,
+   "errors": null,
+   "api_error_status": null,
+   "uuid": "3f78ae49-e908-4f87-82f1-d75382012ef9",
+   "terminal_reason": "completed",
+   "origin": null
+  }
+ ],
+ "approvals": []
+}

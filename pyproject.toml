@@ -1,0 +1,32 @@
+[project]
+name = "runner"
+version = "0.1.0"
+description = "Runs one Claude Code or Codex coding session behind one provider interface and one normalised event stream."
+requires-python = ">=3.13"
+# Two pinned dependencies, nothing else at run time: the Claude Agent SDK, whose wheel bundles the
+# Claude Code CLI, and the Codex SDK, which pins its CLI. Both pins will age (see README.md, "What this edition is").
+dependencies = [
+    "claude-agent-sdk==0.2.180",
+    "openai-codex==0.167.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+]
+
+# No [build-system] table: uv treats this as a virtual project and builds nothing of ours.
+[tool.uv]
+no-build = true
+python-downloads = "manual"
+python-preference = "managed"
+exclude-newer = "7 days"
+# The two SDKs were admitted with fixed cut-off dates so that no later release slips in.
+exclude-newer-package = { claude-agent-sdk = "2026-11-10T00:00:00Z", openai-codex = "2026-11-07T00:00:00Z", openai-codex-cli-bin = "2026-11-07T00:00:00Z" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# Keep a test's temporary files only when it fails, and only for the latest run.
+tmp_path_retention_policy = "failed"
+tmp_path_retention_count = 1

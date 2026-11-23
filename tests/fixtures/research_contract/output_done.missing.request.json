@@ -1,0 +1,9 @@
+{
+  "session_id": 41,
+  "files": [
+    {"name": "synthesis.md", "parts": 0, "sha256": null},
+    {"name": "claims.json", "parts": 1, "sha256": "c27593cc50239780d910dda3df92774a9496f25855937b8e93a7c442927f6b4a"}
+  ],
+  "partial": true,
+  "reason": "synthesis.md was not written."
+}

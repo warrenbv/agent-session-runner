@@ -1,0 +1,577 @@
+{
+ "source": "Recorded from a live session on the author's own machine by a recording script that is not part of this edition, then scrubbed (claude, exit codes).",
+ "commands": [
+  "sh -c 'exit 3'",
+  "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+  "sh -c 'echo fine'",
+  "test -e /nonexistent-runner-probe-path",
+  "grep -q runner-probe-no-such-text /etc/hostname"
+ ],
+ "messages": [
+  {
+   "type": "QuerySent"
+  },
+  {
+   "type": "SystemMessage",
+   "subtype": "init",
+   "data": {
+    "type": "system",
+    "subtype": "init",
+    "cwd": "/home/agent/.cache/runner-probes/probe-1sw4kr2q/wt",
+    "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+    "tools": [
+     "Task",
+     "AskUserQuestion",
+     "Bash",
+     "CronCreate",
+     "CronDelete",
+     "CronList",
+     "Edit",
+     "EnterPlanMode",
+     "EnterWorktree",
+     "ExitPlanMode",
+     "ExitWorktree",
+     "ListAgents",
+     "Monitor",
+     "NotebookEdit",
+     "Read",
+     "RemoteTrigger",
+     "ReportFindings",
+     "ScheduleWakeup",
+     "SendMessage",
+     "Skill",
+     "TaskStop",
+     "ToolSearch",
+     "WebFetch",
+     "WebSearch",
+     "Workflow",
+     "Write"
+    ],
+    "mcp_servers": [],
+    "model": "claude-sonnet-5-5",
+    "permissionMode": "default",
+    "slash_commands": [
+     "deep-research",
+     "dataviz",
+     "update-config",
+     "verify",
+     "debug",
+     "code-review",
+     "simplify",
+     "batch",
+     "fewer-permission-prompts",
+     "doctor",
+     "loop",
+     "schedule",
+     "claude-api",
+     "workflow-authoring",
+     "run",
+     "run-skill-generator",
+     "plugin-authoring",
+     "agents",
+     "auto-mode-setup",
+     "autocompact",
+     "clear",
+     "color",
+     "compact",
+     "config",
+     "output-style",
+     "context",
+     "effort",
+     "fast",
+     "focus",
+     "heapdump",
+     "init",
+     "mcp",
+     "model",
+     "__remote-workflow",
+     "workflow-launch-exec",
+     "reload-plugins",
+     "reload-skills",
+     "rename",
+     "security-review",
+     "usage",
+     "insights",
+     "recap",
+     "goal",
+     "list-agents",
+     "team-onboarding"
+    ],
+    "terminal_slash_commands": [
+     "doctor",
+     "color",
+     "focus",
+     "reload-plugins"
+    ],
+    "apiKeySource": "[redacted]",
+    "claude_code_version": "2.1.319",
+    "output_style": "default",
+    "agents": [
+     "claude",
+     "Explore",
+     "general-purpose",
+     "Plan",
+     "statusline-setup"
+    ],
+    "skills": [
+     "deep-research",
+     "dataviz",
+     "update-config",
+     "verify",
+     "debug",
+     "code-review",
+     "simplify",
+     "batch",
+     "fewer-permission-prompts",
+     "doctor",
+     "loop",
+     "schedule",
+     "claude-api",
+     "workflow-authoring",
+     "run",
+     "run-skill-generator",
+     "plugin-authoring"
+    ],
+    "plugins": [
+     {
+      "name": "cc-plugin-sec-default",
+      "path": "builtin",
+      "source": "cc-plugin-sec-default@builtin"
+     },
+     {
+      "name": "cc-plugin-agents-md",
+      "path": "builtin",
+      "source": "cc-plugin-agents-md@builtin"
+     },
+     {
+      "name": "cc-plugin-privacy",
+      "path": "builtin",
+      "source": "cc-plugin-privacy@builtin"
+     },
+     {
+      "name": "cc-plugin-plugin-authoring",
+      "path": "builtin",
+      "source": "cc-plugin-plugin-authoring@builtin"
+     }
+    ],
+    "capabilities": [
+     "interrupt_receipt_v1",
+     "interrupt_cancel_queued_v1",
+     "interrupt_send_now_v1",
+     "interrupt_requeue_taken_v1",
+     "msg_lifecycle_v1",
+     "request_marker_lists_v1",
+     "ask_user_question_unanswered_v1",
+     "lifecycle_wakeup_source_v1",
+     "sdk_mcp_tools_list_changed",
+     "sdk_mcp_manifests",
+     "mcp_read_resource_v1",
+     "mcp_tool_ui_meta_v1",
+     "ui_surface_v1",
+     "mcp_call_result_not_for_model_v1",
+     "mcp_call_check_permissions_v1"
+    ],
+    "analytics_disabled": true,
+    "product_feedback_disabled": false,
+    "uuid": "aa40852c-5c60-4ea3-859d-25a055f2797a",
+    "memory_paths": {
+     "auto": "[home path]"
+    },
+    "original_cwd": "/home/agent/.cache/runner-probes/probe-1sw4kr2q/wt",
+    "additional_directories": [],
+    "messaging_socket_path": "[home path]",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "per_turn_effort_active": true,
+    "ultrathink_available": false,
+    "ultrathink_typed_raises": false,
+    "view_mode": "default"
+   }
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01KiE6QzvGzcWcRzcDEtVVUo",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'exit 3'",
+      "description": "Run exit 3"
+     }
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 6046,
+    "cache_read_input_tokens": 12592,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 6046
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmKp7bk9XrPFYqzM6KN",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "5be20603-8767-458f-9fb2-bae5407e238b"
+  },
+  {
+   "type": "RateLimitEvent",
+   "rate_limit_info": {
+    "type": "RateLimitInfo",
+    "status": "allowed",
+    "resets_at": 1794567600,
+    "rate_limit_type": "seven_day",
+    "utilization": null,
+    "overage_status": "rejected",
+    "overage_resets_at": null,
+    "overage_disabled_reason": "redacted",
+    "raw": {
+     "status": "allowed",
+     "resetsAt": 1794567600,
+     "rateLimitType": "seven_day",
+     "overageStatus": "rejected",
+     "overageDisabledReason": "redacted",
+     "isUsingOverage": false,
+     "unifiedWindows": {
+      "seven_day": {
+       "utilization": 0.5,
+       "resetsAt": 1794567600,
+       "status": "allowed"
+      }
+     }
+    }
+   },
+   "uuid": "44d15646-7e97-4ebd-a933-7481d63c86c3",
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01KiE6QzvGzcWcRzcDEtVVUo",
+     "content": "Exit code 3",
+     "is_error": true
+    }
+   ],
+   "uuid": "51674415-664d-4e44-adf3-4fcd11d1ff4b",
+   "parent_tool_use_id": null,
+   "tool_use_result": "Error: Exit code 3",
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01KbWD5cnfjpWmgJrDaRKCuo",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+      "description": "Run echo and exit 4"
+     }
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 100,
+    "cache_read_input_tokens": 18638,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 100
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmKyuiMzZkxiUuQ2nKw",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "03e70632-47dc-48ce-8a09-1d07b5f5d455"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01KbWD5cnfjpWmgJrDaRKCuo",
+     "content": "Exit code 4\nto-stdout\nto-stderr",
+     "is_error": true
+    }
+   ],
+   "uuid": "8ac2d5ac-11ef-4d95-a54c-28d3b1d7a781",
+   "parent_tool_use_id": null,
+   "tool_use_result": "Error: Exit code 4\nto-stdout\nto-stderr",
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_014FYDdePRG69x44VAapHkKk",
+     "name": "Bash",
+     "input": {
+      "command": "sh -c 'echo fine'",
+      "description": "Run echo fine"
+     }
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 136,
+    "cache_read_input_tokens": 18738,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 136
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmL7hmMmRh7s3hGK9f1",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "c7f56aae-96fc-4990-a6b5-0389930b3f5f"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_014FYDdePRG69x44VAapHkKk",
+     "content": "fine",
+     "is_error": false
+    }
+   ],
+   "uuid": "8de518cf-6d82-41a4-82c0-1c4d0276aded",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "fine",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_01SPzjzdvqmKwiDQHWb5K9tT",
+     "name": "Bash",
+     "input": {
+      "command": "test -e /nonexistent-runner-probe-path",
+      "description": "Test nonexistent path"
+     }
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 90,
+    "cache_read_input_tokens": 18874,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 90
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmLFbXcxCgoFDHy1sei",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "2f4b3564-7a58-4a0a-ba8f-0abc788898a5"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_01SPzjzdvqmKwiDQHWb5K9tT",
+     "content": "(Bash completed with no output)",
+     "is_error": false
+    }
+   ],
+   "uuid": "58332661-b952-466c-94c6-cc711694b46e",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "returnCodeInterpretation": "Condition is false",
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "ToolUseBlock",
+     "id": "toolu_015TAMQJ6RrP4D4uzvRkbrP7",
+     "name": "Bash",
+     "input": {
+      "command": "grep -q runner-probe-no-such-text /etc/hostname",
+      "description": "Grep for absent text"
+     }
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 107,
+    "cache_read_input_tokens": 18964,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 107
+    },
+    "output_tokens": 16,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmLP7UW9q9CF2xMxoKh",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "065eecb7-4b86-4df6-b4b8-e38d5ca9937e"
+  },
+  {
+   "type": "UserMessage",
+   "content": [
+    {
+     "type": "ToolResultBlock",
+     "tool_use_id": "toolu_015TAMQJ6RrP4D4uzvRkbrP7",
+     "content": "(Bash completed with no output)",
+     "is_error": false
+    }
+   ],
+   "uuid": "c6976a8a-8a2c-4301-90bb-5eeacede3bef",
+   "parent_tool_use_id": null,
+   "tool_use_result": {
+    "stdout": "",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "returnCodeInterpretation": "No matches found",
+    "noOutputExpected": false
+   },
+   "origin": null
+  },
+  {
+   "type": "AssistantMessage",
+   "content": [
+    {
+     "type": "TextBlock",
+     "text": "DONE"
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "parent_tool_use_id": null,
+   "error": null,
+   "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 155,
+    "cache_read_input_tokens": 19071,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 155
+    },
+    "output_tokens": 5,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "message_id": "msg_011CgtmLnZbusSbvpbf4yvRs",
+   "stop_reason": null,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "uuid": "3096e53c-5f74-430c-aa5b-81d12c8324a2"
+  },
+  {
+   "type": "ResultMessage",
+   "subtype": "success",
+   "duration_ms": 14283,
+   "duration_api_ms": 13869,
+   "is_error": false,
+   "num_turns": 6,
+   "session_id": "0af85773-361e-4815-9e63-620e1fa3e935",
+   "stop_reason": "end_turn",
+   "total_cost_usd": 0.041907700000000006,
+   "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 6634,
+    "cache_read_input_tokens": 106877,
+    "output_tokens": 466,
+    "output_tokens_details": {
+     "thinking_tokens": 0
+    },
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 6634,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "result": "DONE",
+   "structured_output": null,
+   "model_usage": {
+    "claude-sonnet-5-5": {
+     "inputTokens": 12,
+     "outputTokens": 466,
+     "cacheReadInputTokens": 106877,
+     "cacheCreationInputTokens": 6634,
+     "webSearchRequests": 0,
+     "costUSD": 0.041907700000000006,
+     "contextWindow": 1000000,
+     "maxOutputTokens": 128000,
+     "thinkingTokens": 0,
+     "cacheCreationEphemeral5mInputTokens": 0,
+     "cacheCreationEphemeral1hInputTokens": 6634,
+     "canonicalModel": "claude-sonnet-5-5",
+     "provider": "firstParty",
+     "costBasis": "list"
+    }
+   },
+   "permission_denials": [],
+   "deferred_tool_use": null,
+   "errors": null,
+   "api_error_status": null,
+   "uuid": "ef484c5e-aa24-46f1-bd86-e9849b52cef4",
+   "terminal_reason": "completed",
+   "origin": null
+  }
+ ],
+ "approvals": []
+}

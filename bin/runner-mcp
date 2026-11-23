@@ -1,0 +1,25 @@
+#!/usr/bin/env -S python3 -I
+"""The `runner-mcp` command: the stdio MCP server that Claude Code or Codex starts for a session.
+
+The shim uses the standard library only, so any Python 3.13 runs it. From a clone, run
+`bin/runner-mcp` with the project's environment first on PATH (`uv run bin/runner-mcp` does this),
+so that `python3` is the one `uv sync` set up. The project is a virtual uv project with no build
+step, so uv installs no console scripts. A deployment copies this file into its virtual environment's
+bin directory with mode 0755 and may point the first line at that environment's python3.
+
+The package is found beside the script in a clone (bin/ next to runner/), or as the parent of the
+virtual environment when the file sits in .venv/bin.
+"""
+
+import pathlib
+import sys
+
+_HERE = pathlib.Path(__file__).resolve().parent
+for _root in (_HERE.parent, _HERE.parent.parent, pathlib.Path(sys.prefix).parent):
+    if (_root / "runner" / "mcp_shim.py").is_file():
+        sys.path.insert(0, str(_root))
+        break
+
+from runner.mcp_shim import main  # noqa: E402
+
+raise SystemExit(main())

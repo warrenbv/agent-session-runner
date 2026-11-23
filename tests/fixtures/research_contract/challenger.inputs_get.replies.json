@@ -1,0 +1,23 @@
+[
+  {"part": 0, "total": 7, "name": "brief.md", "index": 0, "parts": 1,
+   "sha256": "427a40e559d3d58871179fb275e3d0ae7f167f35b7a0b727174858025fdaa458",
+   "content": "## Questions for you\n\nWhich climate zone?\n\n## Question\n\nHeat pumps in the cold."},
+  {"part": 1, "total": 7, "name": "brief.json", "index": 0, "parts": 1,
+   "sha256": "59a35766dc96af8e3707ccca718864bc9f3c741537d735e05d7bed16ba62abeb",
+   "content": "{\n  \"question\": \"How well do heat pumps work in cold climates?\",\n  \"sub_questions\": [\n    \"field data\",\n    \"costs\"\n  ],\n  \"scope\": \"residential\",\n  \"exclusions\": \"commercial\",\n  \"time_window\": \"2018 to now\",\n  \"source_types\": [\n    \"field studies\"\n  ],\n  \"depth\": \"quick\",\n  \"output\": \"claims with sources\",\n  \"questions_for_owner\": [\n    \"Which climate zone?\"\n  ]\n}"},
+  {"part": 2, "total": 7, "name": "claude/synthesis.md", "index": 0, "parts": 1,
+   "sha256": "a5d8696349e6bd7a1339b3390c5d1d995cac0b53e33b168a24ba41730ddd9ef1",
+   "content": "## C1 Cold-climate units hold capacity\n\nThey do, down to minus 15 C.\n\n## C2 Running costs\n\nLower than oil.\n\n## Methods and limits\n\nTwo searches.\n"},
+  {"part": 3, "total": 7, "name": "claude/claims.json", "index": 0, "parts": 1,
+   "sha256": "adec7d6c7569892eb360728c584ce4b9f496b48480e2eb45e80e3d668dff8cd2",
+   "content": "[\n  {\n    \"id\": \"C1\",\n    \"text\": \"Capacity holds to minus 15 C.\",\n    \"confidence\": \"high\",\n    \"how_found\": \"field study\",\n    \"sources\": [\n      {\n        \"url\": \"https://www.example.org/study/?utm_source=x\",\n        \"title\": \"Study\",\n        \"accessed\": \"2026-11-12\"\n      }\n    ]\n  },\n  {\n    \"id\": \"C2\",\n    \"text\": \"Lower running cost than oil.\",\n    \"confidence\": \"medium\",\n    \"how_found\": \"report\",\n    \"sources\": [\n      {\n        \"url\": \"https://example.net/costs\",\n        \"title\": \"Costs\",\n        \"accessed\": \"2026-11-12\"\n      }\n    ]\n  }\n]"},
+  {"part": 4, "total": 7, "name": "codex/synthesis.md", "index": 0, "parts": 1,
+   "sha256": "ece2c15dea49f0c4bdb6df86cac44104a63f4482cda5dd0b4e838de60a022595",
+   "content": "## C1 Cold units work\n\nYes.\n\n## Methods and limits\n\nOne search.\n"},
+  {"part": 5, "total": 7, "name": "codex/claims.json", "index": 0, "parts": 1,
+   "sha256": "27752936c752b9e9b72e796a1f6b2705b388bc70684798f3eb1243193850a626",
+   "content": "[\n  {\n    \"id\": \"C1\",\n    \"text\": \"They work.\",\n    \"confidence\": \"medium\",\n    \"how_found\": \"search\",\n    \"sources\": [\n      {\n        \"url\": \"https://example.org/study\",\n        \"title\": \"Study\",\n        \"accessed\": \"2026-11-12\"\n      }\n    ]\n  }\n]"},
+  {"part": 6, "total": 7, "name": "providers.json", "index": 0, "parts": 1,
+   "sha256": "ece94d906cb906672ef9f387c60816a92f459c7430984590343aabe233d91a67",
+   "content": "{\n  \"reached\": [\n    {\n      \"provider\": \"claude\",\n      \"partial\": false,\n      \"reason\": null\n    },\n    {\n      \"provider\": \"codex\",\n      \"partial\": false,\n      \"reason\": null\n    }\n  ],\n  \"failed\": [],\n  \"not_dispatched\": []\n}"}
+]

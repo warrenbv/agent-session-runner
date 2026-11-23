@@ -1,0 +1,9 @@
+{
+  "session_id": 41,
+  "files": [
+    {"name": "challenge.md", "parts": 1, "sha256": "0ce8c6cad9fd76639b21d20cd9b124ded99b7fa32c405c53d5972ada1a487f0f"},
+    {"name": "verdicts.json", "parts": 1, "sha256": "fd77fa5a941ff590c7c33959830da5d4c9de6d2781667302edea7a1c7a413416"}
+  ],
+  "partial": false,
+  "reason": null
+}

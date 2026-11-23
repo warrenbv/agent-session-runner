@@ -1,0 +1,30 @@
+{
+  "provider": "claude-code",
+  "turns": [[
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "content": [
+      {"type": "TextBlock", "text": "I'll fix the backup exclusion."},
+      {"type": "ToolUseBlock", "id": "toolu_01", "name": "Bash", "input": {"command": "rm -rf build/"}}
+    ]},
+    {"fake": "approval", "tool_name": "Bash", "input": {"command": "rm -rf build/"}, "tool_use_id": "toolu_01",
+     "on_allow": [{"type": "UserMessage", "parent_tool_use_id": null, "content": [
+       {"type": "ToolResultBlock", "tool_use_id": "toolu_01", "content": "", "is_error": false}]}],
+     "on_deny": [{"type": "UserMessage", "parent_tool_use_id": null, "content": [
+       {"type": "ToolResultBlock", "tool_use_id": "toolu_01", "content": "$DENY_MESSAGE", "is_error": true}]}]},
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "content": [
+      {"type": "ToolUseBlock", "id": "toolu_02", "name": "Task", "input": {"description": "Write a test", "prompt": "Add a test.", "subagent_type": "test-writer"}}
+    ]},
+    {"type": "TaskStartedMessage", "subtype": "task_started", "data": {}, "task_id": "task_1", "description": "Write a test", "uuid": "u-1", "session_id": "s", "tool_use_id": "toolu_02", "task_type": "local_agent"},
+    {"fake": "write", "path": "scripts/backup.sh", "text": "rsync -a --exclude cache /srv/data /backup\n"},
+    {"type": "TaskNotificationMessage", "subtype": "task_notification", "data": {}, "task_id": "task_1", "status": "completed", "output_file": "/tmp/o", "summary": "Test added.", "uuid": "u-2", "session_id": "s", "tool_use_id": "toolu_02"},
+    {"type": "UserMessage", "parent_tool_use_id": null, "content": [
+      {"type": "ToolResultBlock", "tool_use_id": "toolu_02", "content": "Test added.", "is_error": false}]},
+    {"type": "RateLimitEvent", "uuid": "u-3", "session_id": "s", "rate_limit_info": {"status": "allowed", "rate_limit_type": "five_hour", "utilization": 0.4, "raw": {}}},
+    {"type": "ResultMessage", "subtype": "success", "duration_ms": 1000, "duration_api_ms": 900, "is_error": false, "num_turns": 4, "session_id": "s", "total_cost_usd": 0.12, "usage": {"input_tokens": 10, "output_tokens": 20},
+     "structured_output": {"summary": "Exclude the cache directory from the backup", "files_changed": ["scripts/backup.sh"], "tests_run": ["pytest -q"], "branch": "agent/fix-backup", "open_questions": []},
+     "terminal_reason": "completed"}
+  ]],
+  "default_turn": [
+    {"type": "AssistantMessage", "model": "claude-opus-5-5", "parent_tool_use_id": null, "content": [{"type": "TextBlock", "text": "Done."}]},
+    {"type": "ResultMessage", "subtype": "success", "duration_ms": 10, "duration_api_ms": 9, "is_error": false, "num_turns": 1, "session_id": "s", "total_cost_usd": 0.15, "terminal_reason": "completed"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+ "_about": "A question from each provider and what its model read back, recorded on the author's own machine against the pinned binaries with a mock model on localhost (no account, no network): Codex 0.167.0's app-server driven over stdio, and the Claude CLI 2.1.321 bundled with claude-agent-sdk 0.2.180 driven by the SDK. Thread and turn ids as recorded; the warning's CODEX_HOME path replaced and the typed note reworded.",
+ "codex": {
+  "request": {"method": "item/tool/requestUserInput", "id": 0, "params": {"threadId": "01a1d6be-6580-7321-a73c-0c845a036211", "turnId": "01a1d6be-658e-7c93-a3d5-ad108158f64d", "itemId": "call_1", "questions": [{"id": "db_choice", "header": "Database", "question": "Which database should the app use?", "isOther": true, "isSecret": false, "options": [{"label": "SQLite (Recommended)", "description": "One file, no server."}, {"label": "Postgres", "description": "A server to run."}]}, {"id": "port", "header": "Port", "question": "Which port should it listen on?", "isOther": true, "isSecret": false, "options": [{"label": "8080", "description": "The usual."}, {"label": "3000", "description": "Node's habit."}]}], "isBlocking": false, "autoResolutionMs": null}},
+  "model_call": {"type": "function_call", "id": "fc_1", "name": "request_user_input", "arguments": "{\"questions\": [{\"id\": \"db_choice\", \"header\": \"Database\", \"question\": \"Which database should the app use?\", \"options\": [{\"label\": \"SQLite (Recommended)\", \"description\": \"One file, no server.\"}, {\"label\": \"Postgres\", \"description\": \"A server to run.\"}]}, {\"id\": \"port\", \"header\": \"Port\", \"question\": \"Which port should it listen on?\", \"options\": [{\"label\": \"8080\", \"description\": \"The usual.\"}, {\"label\": \"3000\", \"description\": \"Node's habit.\"}]}]}", "call_id": "call_1"},
+  "answered": {
+   "_about": "The runner's CodexProvider, the relay answering with the console's reply below; what the model read as the call's output.",
+   "relay_message": "The session's owner answered: Database: Postgres\nPort: 3000\nand keep it small",
+   "function_call_output": {"type": "function_call_output", "id": "fco_01a1d6c5-9921-7442-ab08-a1078022465b", "call_id": "call_1", "output": "{\"answers\":{\"db_choice\":{\"answers\":[\"Postgres\",\"user_note: and keep it small\"]},\"port\":{\"answers\":[\"3000\",\"user_note: and keep it small\"]}}}"}
+  },
+  "dismissed": {
+   "_about": "The same, the relay answering with the console's dismissal: no answers as the call's output, then the words steered in as a user message in the same turn.",
+   "relay_message": "The session's owner dismissed this question without answering it. Proceed on your best judgement, or ask again in a different way.",
+   "function_call_output": {"type": "function_call_output", "call_id": "call_1", "output": "{\"answers\":{}}"},
+   "steered_user_text": "The session's owner dismissed this question without answering it. Proceed on your best judgement, or ask again in a different way."
+  },
+  "empty_result": {
+   "_about": "What the runner answered before this change ({}): Codex logs `failed to deserialize ToolRequestUserInputResponse: missing field answers` and the model reads an empty answer.",
+   "response": {},
+   "function_call_output": {"type": "function_call_output", "call_id": "call_1", "output": "{\"answers\":{}}"}
+  },
+  "default_mode_without_feature": {
+   "_about": "The same call in a thread without features.default_mode_request_user_input: Codex answers it itself and no request reaches the client.",
+   "function_call_output": {"type": "function_call_output", "call_id": "call_1", "output": "request_user_input is unavailable in Default mode"}
+  },
+  "feature_warning": {"method": "warning", "params": {"threadId": "01a1d6be-6580-7321-a73c-0c845a036211", "message": "Under-development features enabled: default_mode_request_user_input. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in <CODEX_HOME>/config.toml."}, "emittedAtMs": 1794604164489},
+  "resolved": {"method": "serverRequest/resolved", "params": {"threadId": "01a1d6be-6580-7321-a73c-0c845a036211", "requestId": 0}, "emittedAtMs": 1794604164535}
+ },
+ "claude": {
+  "can_use_tool": {"name": "AskUserQuestion", "input": {"questions": [{"question": "Which database should the app use?", "header": "Database", "options": [{"label": "SQLite", "description": "One file."}, {"label": "Postgres", "description": "A server."}], "multiSelect": false}, {"question": "Which port should it listen on?", "header": "Port", "options": [{"label": "8080", "description": "Usual."}, {"label": "3000", "description": "Node."}], "multiSelect": false}]}},
+  "allowed_with_answers": {
+   "_about": "PermissionResultAllow(updated_input = the input with answers and annotations): the tool's own result.",
+   "updated_input_extra": {"answers": {"Which database should the app use?": "SQLite", "Which port should it listen on?": "8080"}, "annotations": {"Which database should the app use?": {"notes": "keep it on this machine"}}},
+   "tool_result": {"type": "tool_result", "content": "The user answered: \"Which database should the app use?\"=\"SQLite\" notes: keep it on this machine, \"Which port should it listen on?\"=\"8080\". Read the answers carefully — they may request clarification, changes, or that you not proceed — and follow what they actually say.\n\n<system-reminder>\n<total_tokens>14999998 tokens left</total_tokens>\n</system-reminder>", "tool_use_id": "toolu_probe1"}
+  },
+  "denied_with_feedback": {
+   "_about": "Before this change: PermissionResultDeny(message = the relay's feedback), an error result.",
+   "message": "The session's owner answered: Database: SQLite",
+   "tool_result": {"type": "tool_result", "content": "The session's owner answered: Database: SQLite\n\n<system-reminder>\n<total_tokens>14999998 tokens left</total_tokens>\n</system-reminder>", "is_error": true, "tool_use_id": "toolu_probe1"}
+  }
+ }
+}

@@ -1,0 +1,957 @@
+{
+ "source": "Recorded from a live session on the author's own machine by a recording script that is not part of this edition, then scrubbed (codex, exit codes).",
+ "commands": [
+  "sh -c 'exit 3'",
+  "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+  "sh -c 'echo fine'",
+  "test -e /nonexistent-runner-probe-path",
+  "grep -q runner-probe-no-such-text /etc/hostname"
+ ],
+ "messages": [
+  {
+   "method": "turn/started",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turn": {
+     "id": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2",
+     "items": [],
+     "itemsView": "notLoaded",
+     "rootTurnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2",
+     "startedAt": 1794291728,
+     "status": "inProgress"
+    }
+   }
+  },
+  {
+   "method": "remoteControl/status/changed",
+   "params": {
+    "installationId": "00000000-0000-4000-8000-000000000000",
+    "serverName": "example-host",
+    "status": "disabled"
+   }
+  },
+  {
+   "method": "thread/started",
+   "params": {
+    "thread": {
+     "cliVersion": "0.167.0",
+     "createdAt": 1794291728,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "ephemeral": false,
+     "historyMode": "paginated",
+     "id": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+     "model": "gpt-6.1-sol",
+     "modelProvider": "openai",
+     "originator": "codex_python_sdk",
+     "path": "[home path]",
+     "preview": "",
+     "recencyAt": 1794291728,
+     "sessionId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+     "source": "vscode",
+     "status": {
+      "type": "idle"
+     },
+     "turns": [],
+     "updatedAt": 1794291728
+    }
+   }
+  },
+  {
+   "method": "mcpServer/startupStatus/updated",
+   "params": {
+    "name": "codex_apps",
+    "status": "starting",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f"
+   }
+  },
+  {
+   "method": "thread/status/changed",
+   "params": {
+    "status": {
+     "activeFlags": [],
+     "type": "active"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "content": [
+      {
+       "text": "Do these steps in order. 1. Run this shell command exactly as written with your shell tool: sh -c 'exit 3' 2. Run this shell command exactly as written with your shell tool: sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4' 3. Run this shell command exactly as written with your shell tool: sh -c 'echo fine' 4. Run this shell command exactly as written with your shell tool: test -e /nonexistent-runner-probe-path 5. Run this shell command exactly as written with your shell tool: grep -q runner-probe-no-such-text /etc/hostname Run each command on its own, exactly as written, and carry on to the next step whatever the result or exit status. Then reply with the single word DONE.",
+       "text_elements": [],
+       "type": "text"
+      }
+     ],
+     "id": "01a1c41f-062d-7752-bbd1-bb9d08526665",
+     "startedAtMs": 1794291729967,
+     "type": "userMessage"
+    },
+    "startedAtMs": 1794291729967,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "account/updated",
+   "params": {
+    "authMode": "redacted"
+   }
+  },
+  {
+   "method": "mcpServer/startupStatus/updated",
+   "params": {
+    "name": "codex_apps",
+    "status": "ready",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291729967,
+    "item": {
+     "completedAtMs": 1794291729967,
+     "content": [
+      {
+       "text": "Do these steps in order. 1. Run this shell command exactly as written with your shell tool: sh -c 'exit 3' 2. Run this shell command exactly as written with your shell tool: sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4' 3. Run this shell command exactly as written with your shell tool: sh -c 'echo fine' 4. Run this shell command exactly as written with your shell tool: test -e /nonexistent-runner-probe-path 5. Run this shell command exactly as written with your shell tool: grep -q runner-probe-no-such-text /etc/hostname Run each command on its own, exactly as written, and carry on to the next step whatever the result or exit status. Then reply with the single word DONE.",
+       "text_elements": [],
+       "type": "text"
+      }
+     ],
+     "id": "01a1c41f-062d-7752-bbd1-bb9d08526665",
+     "startedAtMs": 1794291729967,
+     "type": "userMessage"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "id": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+     "phase": "commentary",
+     "startedAtMs": 1794291731761,
+     "text": "",
+     "type": "agentMessage"
+    },
+    "startedAtMs": 1794291731761,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": "I",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": "’ll",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " run",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " each",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " command",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " separately",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " in",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " order",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": ",",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " continuing",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " regardless",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " of",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " its",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " exit",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": " status",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": ".",
+    "itemId": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291732552,
+    "item": {
+     "completedAtMs": 1794291732552,
+     "id": "msg_06bb31e91df6ca35016af2b813ba3887d098f0b8582c024b91",
+     "phase": "commentary",
+     "startedAtMs": 1794291731761,
+     "text": "I’ll run each command separately in order, continuing regardless of its exit status.",
+     "type": "agentMessage"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {
+      "omnimod": {
+       "protection_type": "omnimod",
+       "outputs": [
+        {
+         "results": [
+          {
+           "category_flags": {
+            "A1": false,
+            "A2": false,
+            "A3": false,
+            "C1": false,
+            "C11": false,
+            "C2": false,
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "H1": false,
+            "H2": false,
+            "H3": false,
+            "JB1": false,
+            "K1": false,
+            "K2": false,
+            "K3": false,
+            "K4": false,
+            "P1": false,
+            "P2": false,
+            "P3": false,
+            "P4": false,
+            "PD1": false,
+            "PD4": false,
+            "S1": false,
+            "S3+": false,
+            "S4": false,
+            "SH": false,
+            "TXT-C3": false,
+            "TXT-C4": false,
+            "V1": false,
+            "V2+": false,
+            "V4+": false,
+            "REFUSED": false,
+            "CBRN-B1+": false,
+            "IMG-C1": false,
+            "IMG-C11": false,
+            "IMG-C2": false,
+            "IMG-S1": false,
+            "IMG-SH": false,
+            "IMG-V1": false,
+            "IMG-V2+": false,
+            "IMG-V4+": false
+           }
+          }
+         ],
+         "is_blocked": false
+        }
+       ]
+      }
+     },
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {},
+     "commentary": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "command": "/usr/bin/bash -lc \"sh -c 'exit 3'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'exit 3'",
+       "type": "unknown"
+      }
+     ],
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "id": "exec-c55546bb-6ac9-4016-b82d-19f7fbe38de6",
+     "processId": "69287",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291732731,
+     "status": "inProgress",
+     "type": "commandExecution"
+    },
+    "startedAtMs": 1794291732731,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291732731,
+    "item": {
+     "command": "/usr/bin/bash -lc \"sh -c 'exit 3'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'exit 3'",
+       "type": "unknown"
+      }
+     ],
+     "completedAtMs": 1794291732731,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "durationMs": 0,
+     "exitCode": 3,
+     "id": "exec-c55546bb-6ac9-4016-b82d-19f7fbe38de6",
+     "processId": "69287",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291732731,
+     "status": "failed",
+     "type": "commandExecution"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 12288,
+      "inputTokens": 15652,
+      "outputTokens": 51,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 15703
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 12288,
+      "inputTokens": 15652,
+      "outputTokens": 51,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 15703
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "account/rateLimits/updated",
+   "params": {
+    "rateLimits": {
+     "credits": {
+      "hasCredits": false,
+      "unlimited": false
+     },
+     "limitId": "codex",
+     "primary": {
+      "resetsAt": 1794609232,
+      "usedPercent": 50,
+      "windowDurationMins": 10080
+     }
+    }
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {},
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "command": "/usr/bin/bash -lc \"sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+       "type": "unknown"
+      }
+     ],
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "id": "exec-ebc04245-fe67-4b86-b5b7-dfa2c0e59d7c",
+     "processId": "35908",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291735508,
+     "status": "inProgress",
+     "type": "commandExecution"
+    },
+    "startedAtMs": 1794291735508,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291735508,
+    "item": {
+     "aggregatedOutput": "to-stderr\nto-stdout\n",
+     "command": "/usr/bin/bash -lc \"sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'echo to-stdout; echo to-stderr 1>&2; exit 4'",
+       "type": "unknown"
+      }
+     ],
+     "completedAtMs": 1794291735508,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "durationMs": 0,
+     "exitCode": 4,
+     "id": "exec-ebc04245-fe67-4b86-b5b7-dfa2c0e59d7c",
+     "processId": "35908",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291735508,
+     "status": "failed",
+     "type": "commandExecution"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 15488,
+      "inputTokens": 15760,
+      "outputTokens": 42,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 15802
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 27776,
+      "inputTokens": 31412,
+      "outputTokens": 93,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 31505
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {},
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "command": "/usr/bin/bash -lc \"sh -c 'echo fine'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'echo fine'",
+       "type": "unknown"
+      }
+     ],
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "id": "exec-56cd042e-7b98-4acb-99b6-c96b20b8db5f",
+     "processId": "57965",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291737716,
+     "status": "inProgress",
+     "type": "commandExecution"
+    },
+    "startedAtMs": 1794291737716,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291737716,
+    "item": {
+     "aggregatedOutput": "fine\n",
+     "command": "/usr/bin/bash -lc \"sh -c 'echo fine'\"",
+     "commandActions": [
+      {
+       "command": "sh -c 'echo fine'",
+       "type": "unknown"
+      }
+     ],
+     "completedAtMs": 1794291737716,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "durationMs": 0,
+     "exitCode": 0,
+     "id": "exec-56cd042e-7b98-4acb-99b6-c96b20b8db5f",
+     "processId": "57965",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291737716,
+     "status": "completed",
+     "type": "commandExecution"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 15616,
+      "inputTokens": 15867,
+      "outputTokens": 27,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 15894
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 43392,
+      "inputTokens": 47279,
+      "outputTokens": 120,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 47399
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {},
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "command": "/usr/bin/bash -lc 'test -e /nonexistent-runner-probe-path'",
+     "commandActions": [
+      {
+       "command": "test -e /nonexistent-runner-probe-path",
+       "type": "unknown"
+      }
+     ],
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "id": "exec-c8e4407e-f731-49f2-9548-77c48056a854",
+     "processId": "12145",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291740678,
+     "status": "inProgress",
+     "type": "commandExecution"
+    },
+    "startedAtMs": 1794291740678,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291740678,
+    "item": {
+     "command": "/usr/bin/bash -lc 'test -e /nonexistent-runner-probe-path'",
+     "commandActions": [
+      {
+       "command": "test -e /nonexistent-runner-probe-path",
+       "type": "unknown"
+      }
+     ],
+     "completedAtMs": 1794291740678,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "durationMs": 0,
+     "exitCode": 1,
+     "id": "exec-c8e4407e-f731-49f2-9548-77c48056a854",
+     "processId": "12145",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291740678,
+     "status": "failed",
+     "type": "commandExecution"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 15744,
+      "inputTokens": 15950,
+      "outputTokens": 33,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 15983
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 59136,
+      "inputTokens": 63229,
+      "outputTokens": 153,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 63382
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {},
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "command": "/usr/bin/bash -lc 'grep -q runner-probe-no-such-text /etc/hostname'",
+     "commandActions": [
+      {
+       "command": "grep -q runner-probe-no-such-text /etc/hostname",
+       "path": "hostname",
+       "query": "runner-probe-no-such-text",
+       "type": "search"
+      }
+     ],
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "id": "exec-d12ba50e-da1b-43f1-bdaa-f70c9e61b283",
+     "processId": "13152",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291743162,
+     "status": "inProgress",
+     "type": "commandExecution"
+    },
+    "startedAtMs": 1794291743162,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291743162,
+    "item": {
+     "command": "/usr/bin/bash -lc 'grep -q runner-probe-no-such-text /etc/hostname'",
+     "commandActions": [
+      {
+       "command": "grep -q runner-probe-no-such-text /etc/hostname",
+       "path": "hostname",
+       "query": "runner-probe-no-such-text",
+       "type": "search"
+      }
+     ],
+     "completedAtMs": 1794291743162,
+     "cwd": "/home/agent/.cache/runner-probes/probe-faxq0_ok/wt",
+     "durationMs": 0,
+     "exitCode": 1,
+     "id": "exec-d12ba50e-da1b-43f1-bdaa-f70c9e61b283",
+     "processId": "13152",
+     "source": "unifiedExecStartup",
+     "startedAtMs": 1794291743162,
+     "status": "failed",
+     "type": "commandExecution"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 15744,
+      "inputTokens": 16040,
+      "outputTokens": 36,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 16076
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 74880,
+      "inputTokens": 79269,
+      "outputTokens": 189,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 79458
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/started",
+   "params": {
+    "item": {
+     "id": "msg_06bb31e91df6ca35016af2b820c1a887d09641fb9ba679207c",
+     "phase": "final_answer",
+     "startedAtMs": 1794291744790,
+     "text": "",
+     "type": "agentMessage"
+    },
+    "startedAtMs": 1794291744790,
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/agentMessage/delta",
+   "params": {
+    "delta": "DONE",
+    "itemId": "msg_06bb31e91df6ca35016af2b820c1a887d09641fb9ba679207c",
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/moderationMetadata",
+   "params": {
+    "metadata": {
+     "prompt": {},
+     "generation": {},
+     "tool_call": {},
+     "tool_response": {}
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "item/completed",
+   "params": {
+    "completedAtMs": 1794291744903,
+    "item": {
+     "completedAtMs": 1794291744903,
+     "id": "msg_06bb31e91df6ca35016af2b820c1a887d09641fb9ba679207c",
+     "phase": "final_answer",
+     "startedAtMs": 1794291744790,
+     "text": "DONE",
+     "type": "agentMessage"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "thread/tokenUsage/updated",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "tokenUsage": {
+     "last": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 15872,
+      "inputTokens": 16131,
+      "outputTokens": 5,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 16136
+     },
+     "modelContextWindow": 475000,
+     "total": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 90752,
+      "inputTokens": 95400,
+      "outputTokens": 194,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 95594
+     }
+    },
+    "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2"
+   }
+  },
+  {
+   "method": "turn/completed",
+   "params": {
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f",
+    "turn": {
+     "completedAt": 1794291744,
+     "durationMs": 16505,
+     "id": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2",
+     "items": [
+      {
+       "completedAtMs": 1794291744903,
+       "id": "msg_06bb31e91df6ca35016af2b820c1a887d09641fb9ba679207c",
+       "phase": "final_answer",
+       "startedAtMs": 1794291744790,
+       "text": "DONE",
+       "type": "agentMessage"
+      }
+     ],
+     "itemsView": "summary",
+     "rootTurnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2",
+     "startedAt": 1794291728,
+     "status": "completed"
+    }
+   }
+  },
+  {
+   "method": "thread/readState/changed",
+   "params": {
+    "readState": {
+     "firstUnread": {
+      "turnId": "01a1c41f-003e-7fb2-a8da-cc12669b6ad2",
+      "type": "turn"
+     },
+     "revision": "0adf4854-b850-4c44-910a-f9293aaf4f4d"
+    },
+    "threadId": "01a1c41f-0021-7d12-bbb4-ffdfee8a407f"
+   }
+  }
+ ],
+ "approvals": []
+}

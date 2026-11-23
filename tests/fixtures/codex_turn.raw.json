@@ -1,0 +1,26 @@
+{
+  "source": "Written by hand from the documented app-server notifications (openai_codex/generated/v2_all.py 0.167.0, dumped by alias), as providers.codex.to_raw renders them.",
+  "messages": [
+    {"method": "thread/started", "params": {"thread": {"id": "thr_1"}}},
+    {"method": "turn/started", "params": {"threadId": "thr_1", "turn": {"id": "turn_1", "items": [], "status": "inProgress"}}},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "startedAtMs": 1, "item": {"type": "agentMessage", "id": "msg_1", "text": ""}}},
+    {"method": "item/agentMessage/delta", "params": {"threadId": "thr_1", "turnId": "turn_1", "itemId": "msg_1", "delta": "I'll run"}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "agentMessage", "id": "msg_1", "text": "I'll run the tests first."}}},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "startedAtMs": 2, "item": {"type": "commandExecution", "id": "call_1", "command": "pytest -q", "cwd": "/home/agent/work/example/wt/s1", "commandActions": [], "status": "inProgress"}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "commandExecution", "id": "call_1", "command": "pytest -q", "cwd": "/home/agent/work/example/wt/s1", "commandActions": [], "status": "completed", "exitCode": 0, "durationMs": 820, "aggregatedOutput": "12 passed in 0.80s\n"}}},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "startedAtMs": 3, "item": {"type": "fileChange", "id": "patch_1", "status": "inProgress", "changes": [{"path": "scripts/backup.sh", "kind": {"type": "update"}, "diff": "@@ -1 +1 @@\n-rsync -a /srv/data /backup\n+rsync -a --exclude cache /srv/data /backup\n"}]}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "fileChange", "id": "patch_1", "status": "completed", "changes": [{"path": "scripts/backup.sh", "kind": {"type": "update"}, "diff": "@@ -1 +1 @@\n-rsync -a /srv/data /backup\n+rsync -a --exclude cache /srv/data /backup\n"}]}}},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "startedAtMs": 4, "item": {"type": "collabAgentToolCall", "id": "collab_1", "tool": "spawnAgent", "status": "inProgress", "senderThreadId": "thr_1", "receiverThreadIds": ["thr_2"], "prompt": "Write a test for the backup exclusion.", "agentsStates": {}}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "collabAgentToolCall", "id": "collab_1", "tool": "spawnAgent", "status": "completed", "senderThreadId": "thr_1", "receiverThreadIds": ["thr_2"], "prompt": "Write a test for the backup exclusion.", "agentsStates": {}}}},
+    {"method": "thread/tokenUsage/updated", "params": {"threadId": "thr_1", "turnId": "turn_1", "tokenUsage": {"total": {"inputTokens": 21000, "cachedInputTokens": 15000, "outputTokens": 1800, "reasoningOutputTokens": 600, "totalTokens": 22800}, "last": {"inputTokens": 4000, "cachedInputTokens": 3000, "outputTokens": 300, "reasoningOutputTokens": 100, "totalTokens": 4300}, "modelContextWindow": 272000}}},
+    {"method": "account/rateLimits/updated", "params": {"rateLimits": {"limitId": "codex", "primary": {"usedPercent": 12, "windowDurationMins": 300, "resetsAt": 1794268800}, "secondary": {"usedPercent": 31, "windowDurationMins": 10080, "resetsAt": 1794700800}}}},
+    {"method": "turn/diff/updated", "params": {"threadId": "thr_1", "turnId": "turn_1", "diff": "..."}},
+    {"method": "error", "params": {"threadId": "thr_1", "turnId": "turn_1", "willRetry": true, "error": {"message": "stream disconnected; retrying"}}},
+    {"method": "turn/completed", "params": {"threadId": "thr_1", "turn": {"id": "turn_1", "items": [], "status": "completed", "durationMs": 61000}}},
+    {"method": "turn/completed", "params": {"threadId": "thr_1", "turn": {"id": "turn_2", "items": [], "status": "interrupted", "error": {"message": "turn interrupted by the client"}}}}
+  ],
+  "approvals": [
+    {"method": "item/commandExecution/requestApproval", "params": {"threadId": "thr_1", "turnId": "turn_1", "itemId": "call_2", "command": "rm -rf build", "cwd": "/home/agent/work/example/wt/s1", "reason": "needs to clean outside the sandbox"}},
+    {"method": "item/fileChange/requestApproval", "params": {"threadId": "thr_1", "turnId": "turn_1", "itemId": "patch_2", "reason": "write outside the workspace", "grantRoot": "/home/agent/work/example"}}
+  ]
+}

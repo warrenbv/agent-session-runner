@@ -1,0 +1,9 @@
+{
+  "session_id": 41,
+  "files": [
+    {"name": "synthesis.md", "parts": 1, "sha256": "a5d8696349e6bd7a1339b3390c5d1d995cac0b53e33b168a24ba41730ddd9ef1"},
+    {"name": "claims.json", "parts": 1, "sha256": "c27593cc50239780d910dda3df92774a9496f25855937b8e93a7c442927f6b4a"}
+  ],
+  "partial": false,
+  "reason": null
+}

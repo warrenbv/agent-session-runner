@@ -1,0 +1,23 @@
+# An example ~/.codex/config.toml for the user that runs sessions. It is the floor for anything run
+# as that user outside the runner. The runner passes its own per-session overrides on top of it
+# (see runner/providers/codex.py and docs/security-model.md).
+#
+# There is deliberately no [mcp_servers] table here. The runner defines its one MCP server per coding
+# session as a --config override, switched off unless the session was given tools. A table defined in
+# this file could not be removed by an override, so a research session would inherit it.
+#
+# There is no [projects] table either. The runner marks each session's worktree and its main checkout
+# untrusted on every start, so a repository's own .codex/ configuration never loads.
+
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[sandbox_workspace_write]
+network_access = false
+
+[analytics]
+enabled = false
+
+# The built-in apps server is off, so the runner's server is the only MCP server a session sees.
+[features]
+apps = false

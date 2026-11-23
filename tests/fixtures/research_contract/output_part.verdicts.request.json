@@ -1,0 +1,7 @@
+{
+  "session_id": 41,
+  "file": "verdicts.json",
+  "index": 0,
+  "total": 1,
+  "content": "{\"verdicts\": [{\"id\": \"V1\", \"claim\": \"claude:C1\", \"verdict\": \"held\", \"basis\": \"own_source\", \"reason\": \"The study says it; nothing found against it in 6 searches.\", \"sources\": [{\"url\": \"https://example.org/study\", \"title\": \"Study\", \"accessed\": \"2026-11-13\"}]}, {\"id\": \"V2\", \"claim\": \"codex:C1\", \"verdict\": \"weakened\", \"basis\": \"other_evidence\", \"reason\": \"The field data is from milder winters.\", \"sources\": [{\"url\": \"https://example.net/field\", \"title\": \"Field data\", \"accessed\": \"2026-11-13\"}]}], \"case_against\": [{\"id\": \"K1\", \"text\": \"Old ducts cut delivered heat.\", \"against\": [\"claude:C1\", \"codex:C1\"], \"sources\": [{\"url\": \"https://www.energy.gov/energysaver/heat-pump-systems\", \"title\": \"DOE\", \"accessed\": \"2026-11-13\"}]}], \"pre_mortem\": [{\"id\": \"P1\", \"text\": \"Backup heat runs more than modelled.\", \"rests_on\": [\"claude:C2\"]}], \"not_examined\": [\"claude:C2\"]}"
+}

@@ -1,0 +1,22 @@
+{
+  "provider": "codex",
+  "turns": [[
+    {"method": "turn/started", "params": {"threadId": "thr_1", "turn": {"id": "turn_1", "items": [], "status": "inProgress"}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "agentMessage", "id": "msg_1", "text": "Running the tests."}}},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "commandExecution", "id": "call_1", "command": "pytest -q", "cwd": "/w", "commandActions": [], "status": "inProgress"}}},
+    {"fake": "approval", "method": "item/commandExecution/requestApproval", "params": {"threadId": "thr_1", "turnId": "turn_1", "itemId": "call_1", "command": "pytest -q", "cwd": "/w"},
+     "on_allow": [{"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "commandExecution", "id": "call_1", "command": "pytest -q", "cwd": "/w", "commandActions": [], "status": "completed", "exitCode": 0, "aggregatedOutput": "3 passed\n"}}}],
+     "on_deny": [{"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "commandExecution", "id": "call_1", "command": "pytest -q", "cwd": "/w", "commandActions": [], "status": "declined"}}}]},
+    {"method": "item/started", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "collabAgentToolCall", "id": "collab_1", "tool": "spawnAgent", "status": "inProgress", "senderThreadId": "thr_1", "receiverThreadIds": ["thr_2"], "prompt": "Write a test.", "agentsStates": {}}}},
+    {"fake": "write", "path": "scripts/backup.sh", "text": "rsync -a --exclude cache /srv/data /backup\n"},
+    {"method": "thread/tokenUsage/updated", "params": {"threadId": "thr_1", "turnId": "turn_1", "tokenUsage": {"total": {"inputTokens": 100, "cachedInputTokens": 0, "outputTokens": 50, "reasoningOutputTokens": 0, "totalTokens": 150}, "last": {"inputTokens": 100, "cachedInputTokens": 0, "outputTokens": 50, "reasoningOutputTokens": 0, "totalTokens": 150}}}},
+    {"method": "account/rateLimits/updated", "params": {"rateLimits": {"limitId": "codex", "primary": {"usedPercent": 12, "windowDurationMins": 300}}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_1", "item": {"type": "agentMessage", "id": "msg_2", "text": "{\"summary\": \"Exclude the cache directory\", \"files_changed\": [\"scripts/backup.sh\"], \"tests_run\": [\"pytest -q\"], \"branch\": \"agent/fix-backup\", \"open_questions\": []}"}}},
+    {"method": "turn/completed", "params": {"threadId": "thr_1", "turn": {"id": "turn_1", "items": [], "status": "completed"}}}
+  ]],
+  "default_turn": [
+    {"method": "turn/started", "params": {"threadId": "thr_1", "turn": {"id": "turn_n", "items": [], "status": "inProgress"}}},
+    {"method": "item/completed", "params": {"threadId": "thr_1", "turnId": "turn_n", "item": {"type": "agentMessage", "id": "msg_n", "text": "Done."}}},
+    {"method": "turn/completed", "params": {"threadId": "thr_1", "turn": {"id": "turn_n", "items": [], "status": "completed"}}}
+  ]
+}

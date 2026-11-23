@@ -1,0 +1,4 @@
+{
+  "status": 400,
+  "body": {"error": {"code": "invalid", "message": "claims.json: the SHA-256 does not match the parts held"}}
+}

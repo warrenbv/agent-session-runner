@@ -1,0 +1,7 @@
+{
+  "session_id": 41,
+  "file": "challenge.md",
+  "index": 0,
+  "total": 1,
+  "content": "## Verdicts\n\n### V1 claude:C1 Capacity holds to minus 15 C\nHeld, nothing found against it in 6 searches. The study says so. Sources: [Study](https://example.org/study).\n\n### V2 codex:C1 Cold units work\nWeakened. The field data is from milder winters. Sources: [Field data](https://example.net/field).\n\n## The case against\n\nOld ducts cut delivered heat [DOE](https://www.energy.gov/energysaver/heat-pump-systems).\n\n## Pre-mortem\n\nReasoning, not evidence. 1. Backup heat runs more than modelled (undoes claude:C2).\n\n## Methods and limits\n\n8 searches, 5 pages read. Not examined: claude:C2, for time.\n"
+}

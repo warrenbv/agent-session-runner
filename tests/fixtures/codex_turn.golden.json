@@ -1,0 +1,204 @@
+{
+ "approvals": [
+  {
+   "input_preview": "{\"command\": \"rm -rf build\", \"cwd\": \"/home/agent/work/example/wt/s1\", \"reason\": \"needs to clean outside the sandbox\"}",
+   "request_id": "call_2",
+   "tool": "command"
+  },
+  {
+   "input_preview": "{\"grantRoot\": \"/home/agent/work/example\", \"reason\": \"write outside the workspace\"}",
+   "request_id": "patch_2",
+   "tool": "fileChange"
+  }
+ ],
+ "messages": [
+  [],
+  [
+   {
+    "kind": "turn",
+    "payload": {
+     "phase": "started",
+     "turn_id": "turn_1"
+    }
+   }
+  ],
+  [],
+  [],
+  [
+   {
+    "kind": "message",
+    "payload": {
+     "item_id": "msg_1",
+     "role": "assistant",
+     "text": "I'll run the tests first."
+    }
+   }
+  ],
+  [
+   {
+    "kind": "tool",
+    "payload": {
+     "cwd": "/home/agent/work/example/wt/s1",
+     "id": "call_1",
+     "input_preview": "pytest -q",
+     "name": "command",
+     "phase": "started",
+     "status": "inProgress"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "tool",
+    "payload": {
+     "cwd": "/home/agent/work/example/wt/s1",
+     "exit_code": 0,
+     "id": "call_1",
+     "input_preview": "pytest -q",
+     "is_error": false,
+     "name": "command",
+     "output_preview": "12 passed in 0.80s\n",
+     "phase": "completed",
+     "status": "completed"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "tool",
+    "payload": {
+     "id": "patch_1",
+     "input_preview": "[{\"kind\": \"update\", \"path\": \"scripts/backup.sh\"}]",
+     "name": "fileChange",
+     "phase": "started",
+     "status": "inProgress"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "tool",
+    "payload": {
+     "id": "patch_1",
+     "input_preview": "[{\"kind\": \"update\", \"path\": \"scripts/backup.sh\"}]",
+     "is_error": false,
+     "name": "fileChange",
+     "phase": "completed",
+     "status": "completed"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "subagent",
+    "payload": {
+     "description": "Write a test for the backup exclusion.",
+     "id": "collab_1",
+     "phase": "started",
+     "receiver_thread_ids": [
+      "thr_2"
+     ],
+     "sender_thread_id": "thr_1",
+     "status": "inProgress",
+     "tool": "spawnAgent"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "subagent",
+    "payload": {
+     "description": "Write a test for the backup exclusion.",
+     "id": "collab_1",
+     "phase": "completed",
+     "receiver_thread_ids": [
+      "thr_2"
+     ],
+     "sender_thread_id": "thr_1",
+     "status": "completed",
+     "tool": "spawnAgent"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "usage",
+    "payload": {
+     "last": {
+      "cachedInputTokens": 3000,
+      "inputTokens": 4000,
+      "outputTokens": 300,
+      "reasoningOutputTokens": 100,
+      "totalTokens": 4300
+     },
+     "model_context_window": 272000,
+     "total": {
+      "cachedInputTokens": 15000,
+      "inputTokens": 21000,
+      "outputTokens": 1800,
+      "reasoningOutputTokens": 600,
+      "totalTokens": 22800
+     },
+     "turn_id": "turn_1"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "limit",
+    "payload": {
+     "limit": "rate_window",
+     "limit_id": "codex",
+     "primary": {
+      "resetsAt": 1794268800,
+      "usedPercent": 12,
+      "windowDurationMins": 300
+     },
+     "secondary": {
+      "resetsAt": 1794700800,
+      "usedPercent": 31,
+      "windowDurationMins": 10080
+     },
+     "source": "provider"
+    }
+   }
+  ],
+  [],
+  [
+   {
+    "kind": "message",
+    "payload": {
+     "role": "error",
+     "text": "stream disconnected; retrying",
+     "will_retry": true
+    }
+   }
+  ],
+  [
+   {
+    "kind": "turn",
+    "payload": {
+     "duration_ms": 61000,
+     "interrupted": false,
+     "is_error": false,
+     "phase": "completed",
+     "status": "completed",
+     "turn_id": "turn_1"
+    }
+   }
+  ],
+  [
+   {
+    "kind": "turn",
+    "payload": {
+     "error": "turn interrupted by the client",
+     "interrupted": true,
+     "is_error": false,
+     "phase": "completed",
+     "status": "interrupted",
+     "turn_id": "turn_2"
+    }
+   }
+  ]
+ ]
+}
